@@ -27,10 +27,12 @@ public interface PersonRepository extends JpaRepository<Person,Integer> {
     public List<Person> getAllPersons();
 
     @Query("select p from Person p where p.name = :n")
+    //jpql
     public List<Person> getPersonByName(@Param("n") String name);
 
     @Query(value = "select * from Person",nativeQuery = true)
-    public List<Person> getPersons(@Param("n") String name);
+    //sql query
+    public List<Person> getPersons();
 
 
 }

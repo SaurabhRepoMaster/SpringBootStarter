@@ -3,6 +3,7 @@ package com.demo.demoProject.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="Person")
 public class Person {
 
 
@@ -10,18 +11,29 @@ public class Person {
     @Id
     private int rollNumber;
 
-    private String name;
-
-    private String lastName;
-
     @Override
     public String toString() {
         return "Person{" +
                 "rollNumber=" + rollNumber +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", Address='" + Address + '\'' +
                 '}';
     }
+
+    private String name;
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    private String lastName;
+
+    private String Address;
 
     public String getLastName() {
         return lastName;
